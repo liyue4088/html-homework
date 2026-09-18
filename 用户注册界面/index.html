@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--页面头部语义标签-->
+<header>
+    <h1>用户注册</h1>
+</header>
+
+<main>
+    <!--注册表单核心-->
+    <form id="regForm" action="#" method="post">
+        <p>
+            <label for="username">用户名：</label>
+            <input type="text" name="username" id="username" required placeholder="请输入用户名">
+        </p>
+
+        <p>
+            <label for="pwd">密码：</label>
+            <input type="password" name="password" id="pwd" placeholder="6-16位字符">
+        </p>
+
+        <p>
+            <label for="confirmPwd">确认密码：</label>
+            <input type="password" name="confirmPassword" id="confirmPwd">
+        </p>
+
+        <!--label两种用法：for+id；包裹式-->
+        <p>
+            性别：
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">男</label>
+            <!--包裹式label-->
+            <label>
+                <input type="radio" name="gender" value="female">女
+            </label>
+        </p>
+
+        <p>
+            <label for="birthday">出生日期：</label>
+            <input type="date" name="birthday" id="birthday">
+        </p>
+
+        <p>
+            <label for="email">邮箱：</label>
+            <input type="email" name="email" id="email" required>
+        </p>
+
+        <p>
+            <label for="phone">手机号：</label>
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{11}" placeholder="输入11位手机号">
+        </p>
+
+        <p>
+            兴趣爱好：
+            <label><input type="checkbox" name="hobby" value="reading">阅读</label>
+            <label><input type="checkbox" name="hobby" value="sport">运动</label>
+            <label><input type="checkbox" name="hobby" value="game">游戏</label>
+        </p>
+
+        <p>
+            <label for="avatar">上传头像（可多选图片）：</label>
+            <input type="file" name="avatar" id="avatar" accept="image/*" multiple>
+        </p>
+
+        <p>
+            <label for="city">所在城市：</label>
+            <select name="city" id="city">
+                <option value="cs" selected>长沙</option>
+                <option value="bj">北京</option>
+                <option value="sh">上海</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="bio">个人简介：</label><br>
+            <textarea name="bio" id="bio" rows="4" cols="50"></textarea>
+        </p>
+
+        <p>
+            <button type="submit">注册</button>
+            <button type="reset">重置</button>
+        </p>
+    </form>
+
+    <!-- 表格：注册须知，带thead、tbody、colspan单元格合并 -->
+    <h2>注册须知</h2>
+    <table border="1" cellpadding="6">
+        <thead>
+            <tr>
+                <th colspan="2">注册相关规则</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>账号</td>
+                <td>用户名不能包含特殊符号</td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td>密码长度6-16位,两次输入必须一致</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--列表部分 ul无序列表；ol有序列表；dl定义列表-->
+    <h2>注册注意事项</h2>
+    <ul>
+        <li>请填写真实邮箱用于找回密码</li>
+        <li>手机号仅用于账号验证</li>
+        <li>上传头像仅支持图片格式</li>
+    </ul>
+
+    <h2>注册步骤</h2>
+    <ol>
+        <li>填写账号密码信息</li>
+        <li>完善个人资料</li>
+        <li>阅读注册须知后提交注册</li>
+    </ol>
+
+    <h2>常见问题</h2>
+    <dl>
+        <dt>收不到邮箱验证码怎么办？</dt>
+        <dd>检查垃圾邮件箱，确认邮箱地址填写正确</dd>
+        <dt>手机号格式报错？</dt>
+        <dd>需要输入完整11位纯数字手机号码</dd>
+    </dl>
+</main>
+
+<footer>
+    <p>©2026 用户注册系统版权所有</p>
+</footer>
+
+<script>
+    // JS监听表单提交，控制台打印表单数据
+    const form = document.getElementById('regForm');
+    form.addEventListener('submit',function(e){
+        e.preventDefault(); //阻止页面跳转
+        const formData = new FormData(form);
+        console.log("表单提交数据：");
+        for(let [key,val] of formData.entries()){
+            console.log(key,":",val);
+        }
+    })
+</script>
+</body>
+</html>
