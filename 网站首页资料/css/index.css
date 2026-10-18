@@ -1,0 +1,387 @@
+/* header区域 */
+
+.header{
+background-color: #fff;
+height: 110px;
+position: fixed;
+top: 0;
+left:0;
+width: 100%;
+z-index:9999;
+}
+.header .wrapper{
+display: flex;
+padding-top: 29px;
+}
+
+/* logo */
+.logo a{
+    width: 195px;
+    height: 81px;
+    background-image: url(../images/logo.png);
+    font-size: 0;
+    display: block;
+}
+/* 导航 */
+.nav{
+    margin-left: 70px;
+}
+.nav ul{
+    display: flex;
+}
+.nav li{
+    margin-right: 25px;
+}
+.nav li a{
+    font-size: 20px;
+    line-height: 27px;
+    padding: 7px 9px;
+    display: block;
+}
+.nav li .active,
+.nav li a:hover{
+    border-bottom: 2px solid blue;
+}
+/* 搜索 */
+.search{
+display: flex;
+width: 430px;
+height: 45px;
+background-color: #f3f5f7;
+border-radius: 20px;
+margin-left: 50px;
+padding-left: 20px;
+padding-right: 12px;
+}
+.search input{
+/* 弹性盒子根据容器剩余空间调整大小 */
+flex: 1;
+/* 去方框轮廓 */
+border: 0;
+/* 透明色 */
+background-color: transparent;
+/* 去掉表单控制焦点框 */
+outline: none;
+}
+/* ::placeholder 选中 placeholder 属性的文字样式 */
+.search input::placeholder{
+font-size: 13px;
+color: #999;
+}
+.search a{
+align-self: center;
+height: 16px;
+width: 16px;
+background-image: url(../images/search.png);
+display:block;
+}
+/* 用户 */
+.user {
+margin-left: 50px;
+margin-top: 5px;
+}
+.user a{
+display: flex;
+align-items: center;
+gap: 5px;
+}
+.user span{
+font-size: 16px;
+color: #666;
+}
+/* 横幅区域banner */
+.banner{
+height: 420px;
+background-color: #0092cb;
+}
+.banner .wrapper{
+display: flex;
+background-image: url(../uploads/banner.png);
+height: 420px;
+}
+/* banner-侧导航 */
+.banner .left{
+width: 191px;
+height: 420px;
+/* rgba 背景颜色透明度，0,0,0 全黑，0.42 即 42%透明度 */
+background-color: rgba(0,0,0,0.42);
+padding: 3px 20px;
+}
+.banner .left a{
+display: block;
+height: 45px;
+font-size: 16px;
+color: #fff;
+line-height: 45px;
+/* no-repeat 背景图不重复平铺，right 水平靠右，center 垂直居中 */
+background: url(../images/right.png) no-repeat right center;
+}
+.banner .left a:hover{
+background-image: url(../images/right-hover.png);
+color: #00a4ff;
+}
+/* banner - 课程表 */
+.banner .right{
+/* 课程表推到最右侧 */
+margin-left: auto;
+margin-top: 60px;
+width: 220px;
+height: 310px;
+background-color: #209dd5;
+border-radius: 10px;
+}
+.banner .right h3{
+margin-left: 15px;
+height: 50px;
+line-height: 50px;
+font-size: 15px;
+font-weight: 400;
+color: #fff;
+}
+.banner .right .content{
+padding: 12px 15px;
+height: 260px;
+background-color: #fff;
+border-radius: 15px;
+}
+.banner .right dl{
+border-bottom: 1px solid #999;
+margin-bottom: 15px;
+}
+.banner .right dt{
+font-size: 15px;
+line-height: 20px;
+margin-bottom: 8px;
+font-weight: 700;
+}
+.banner .right dd{
+font-size: 12px;
+margin-bottom: 8px;
+line-height: 16px;
+}
+.banner .right dd span{
+color: #00a4ff;
+}
+.banner .right dd strong{
+font-weight: 400;
+color: #7d7d7d;
+}
+.banner .right a{
+height: 35px;
+display: block;
+background-color: #00a4ff;
+border-radius: 15px;
+text-align: center;
+line-height: 35px;
+}
+/* 精品推荐 */
+.recommend{
+display: flex;
+height: 60px;
+background-color: #fff;
+margin-top: 12px;
+padding: 0 20px;
+line-height: 60px;
+/* 设置阴影 */
+box-shadow: 0px 1px 2px 0px rgba(211, 211, 211, 0.5);
+font-size: 18px;
+}
+.recommend h3{
+font-weight: 400;
+color: #00a4ff;
+}
+.recommend ul{
+flex:1;
+display: flex;
+}
+.recommend ul li a{
+padding: 0 25px;
+border-right: 1px solid #999;
+}
+.recommend ul li:last-child a{
+border-right: 0;
+}
+.recommend .modify{
+color: #00a4ff;
+}
+/* 精品课程course - 标题 */
+.hd{
+height: 60px;
+line-height: 60px;
+display: flex;
+justify-content: space-between;
+}
+.hd h3{
+font-size: 22px;
+font-weight: 400;
+}
+.hd .more{
+padding-right: 20px;
+background: url(../images/more.png) no-repeat right center;
+font-size: 15px;
+color: #999;
+}
+/* 精品课程course - 内容 【实验考点 Grid二维布局】 */
+.bd ul{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap:15px;
+}
+.bd li{
+margin-bottom: 15px;
+height: 270px;
+background-color: #e2e5e8;
+/* 过渡动画 */
+transition: all 0.3s;
+}
+/* 卡片悬浮动效 transform 实验考点 */
+.bd li:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px #cccccc;
+}
+.bd li .pic{
+height: 156px;
+}
+.bd li .txt{
+padding: 20px;
+height: 114px;
+background-color: #fff;
+}
+.bd li .txt h4{
+font-weight: 400;
+font-size: 14px;
+height: 40px;
+line-height: 20px;
+margin-bottom: 15px;
+}
+.bd li .txt p{
+font-size: 14px;
+line-height: 20px;
+color: #999;
+}
+.bd li .txt p span{
+color: orange;
+}
+.bd li .txt p i{
+font-style: normal;
+}
+/* 学科课程-前端开发标题 */
+.hd ul{
+display: flex;
+}
+.hd li {
+font-size: 16px;
+margin-left: 60px;
+}
+.hd li .active{
+color: #00a4ff;
+}
+/* 学科课程-前端开发内容 */
+/* 学科课程-前端开发内容 改名为sub-bd，不和精品课程的bd重名冲突！！*/
+.sub-bd{
+    display: flex;
+    justify-content: space-between;
+    gap:15px;
+}
+.sub-bd .left{
+    width: 228px;
+}
+.sub-bd .right{
+    flex:1; /* 右边自动占剩余全部宽度 */
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.sub-bd .right .top{
+    height: 100px;
+}
+.sub-bd li{
+margin-bottom: 15px;
+height: 270px;
+background-color: #e2e5e8;
+/* 过渡动画 */
+transition: all 0.3s;
+}
+/* 卡片悬浮动效 transform 实验考点 */
+.sub-bd li:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px #cccccc;
+}
+/* 学科课程内部4个卡片的ul，单独写4列grid！！ */
+.sub-bd .right .bottom ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:15px;
+    margin:0;
+    padding:0;
+}
+
+/* 版权区域rights */
+.rights{
+height: 275px;
+background-color: #fff;
+margin-top: 30px;
+padding-top: 30px;
+}
+.rights .wrapper{
+display: flex;
+justify-content: space-between;
+}
+.rights .left{
+width: 500px;
+}
+.rights .left p{
+margin-top: 5px;
+padding-top: 5px;
+font-size: 12px;
+line-height: 17px;
+color: #999;
+}
+.rights .left .download{
+width: 120px;
+height: 35px;
+border: 2px solid #00a4ff;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 16px;
+color: #00a4ff;
+}
+.rights .right{
+display: flex;
+}
+.rights .right dl{
+margin-left: 100px;
+}
+.rights .right dt{
+font-size: 16px;
+line-height: 25px;
+margin-top: 30px;
+font-weight: 700;
+}
+.rights .right a{
+font-size: 14px;
+line-height: 25px;
+color: #666;
+}
+/* =========媒体查询：移动端，屏幕≤768px ========= */
+@media screen and (max-width:768px){
+    .wrapper{
+        width:100%;
+        padding:0 8px;
+        box-sizing: border-box;
+    }
+    /* 精品课程：5列 → 2列 */
+    .bd ul{
+        grid-template-columns: repeat(2,1fr);
+    }
+    /* 学科课程4张卡片：4列 → 2列 */
+    .sub-bd .right .bottom ul{
+        grid-template-columns: repeat(2,1fr);
+    }
+    /* 学科课程布局移动端改为上下堆叠 */
+    .sub-bd{
+        flex-direction: column;
+    }
+}
+
